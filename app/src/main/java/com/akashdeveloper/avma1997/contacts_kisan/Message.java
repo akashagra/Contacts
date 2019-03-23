@@ -11,12 +11,18 @@ public class Message {
         private String firstname;
         private String lastname;
         private String phoneNo;
+        private String otp;
 
-    public Message(String date, String firstname, String lastname, String phoneNo) {
+    public Message(String date, String firstname, String lastname, String phoneNo,String otp) {
         this.date = date;
         this.firstname = firstname;
         this.lastname = lastname;
         this.phoneNo = phoneNo;
+        this.otp=otp;
+    }
+
+    public String getOtp() {
+        return otp;
     }
 
     public String getDate() {

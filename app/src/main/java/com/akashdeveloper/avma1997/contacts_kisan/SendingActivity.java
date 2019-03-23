@@ -4,7 +4,6 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Message;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -46,6 +45,7 @@ public class SendingActivity extends AppCompatActivity {
     String lastName;
     String phoneNo;
     Contact mContact;
+
     private final static String TAG = "SendMessage";
     // Though its not a good practice to insert id and auth token in an app and hence this sample app is not for production
     private final static String ACCOUNT_SID = "AC07eb061d943be3faebe89a8904537957"; // Twilio account sid
@@ -95,7 +95,7 @@ public class SendingActivity extends AppCompatActivity {
 
     private void sendMessage(String message) {
 
-        String body = message;
+        final String body = message;
         String from = "+12013714801";
         //tested the app on my own number
         //String to ="+919718980265";
@@ -131,6 +131,7 @@ public class SendingActivity extends AppCompatActivity {
                     SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                     String formattedDate = df.format(c.getTime());
                     Log.i("date",formattedDate);
+                    Message message=new Message(formattedDate,mContact.getFirstname(),mContact.getLastname(),mContact.getPhoneno(),body);
 
                 } else {
                     Log.d("TAG", "onResponse->failure");
