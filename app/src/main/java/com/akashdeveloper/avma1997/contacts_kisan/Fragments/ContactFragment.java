@@ -14,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.akashdeveloper.avma1997.contacts_kisan.POJO.Contact;
+
 import java.util.ArrayList;
 
 import retrofit2.Call;
