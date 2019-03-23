@@ -38,6 +38,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             holder.ContactLastName.setText(dataList.get(position).getLastname());
             holder.ContactPhoneNo.setText(dataList.get(position).getPhoneNo());
             holder.date.setText(dataList.get(position).getDate());
+            holder.message.setText(dataList.get(position).getOtp());
         }
 
         @Override
@@ -49,16 +50,18 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
         public static class MessageViewHolder extends RecyclerView.ViewHolder  {
 
-            TextView ContactFirstName, ContactLastName, ContactPhoneNo,date;
+            TextView ContactFirstName, ContactLastName, ContactPhoneNo,date,message;
 
 
             MessageViewHolder(View itemView) {
                 super(itemView);
 
-                ContactFirstName = itemView.findViewById(R.id.tv_first_name);
-                ContactLastName = itemView.findViewById(R.id.tv_last_name);
-                ContactPhoneNo = itemView.findViewById(R.id.tv_phone_no);
-                date=itemView.findViewById(R.id.tv_date);
+                ContactFirstName = itemView.findViewById(R.id.txt_first_name);
+                ContactLastName = itemView.findViewById(R.id.txt_last_name);
+                ContactPhoneNo = itemView.findViewById(R.id.txt_phone_no);
+                date=itemView.findViewById(R.id.textview_date);
+                message=itemView.findViewById(R.id.textview_message);
+
             }
 
 
