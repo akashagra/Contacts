@@ -2,6 +2,8 @@ package com.akashdeveloper.avma1997.contacts_kisan;
 
 import android.Manifest;
 import android.app.Activity;
+import android.arch.lifecycle.ViewModelProvider;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v4.app.ActivityCompat;
@@ -45,6 +47,7 @@ public class SendingActivity extends AppCompatActivity {
     String lastName;
     String phoneNo;
     Contact mContact;
+    MessageViewModel messageViewModel;
 
     private final static String TAG = "SendMessage";
     // Though its not a good practice to insert id and auth token in an app and hence this sample app is not for production
@@ -67,6 +70,8 @@ public class SendingActivity extends AppCompatActivity {
         lastName = intent.getStringExtra(ContactFragment.EXTRA_LASTNAME);
         phoneNo = intent.getStringExtra(ContactFragment.EXTRA_PHONE_NO);
         mContact = new Contact(firstName, lastName, phoneNo);
+        messageViewModel= ViewModelProviders.of(this).get(MessageViewModel.class);
+
         randomNo();
         obtainPermission();
 
@@ -132,6 +137,7 @@ public class SendingActivity extends AppCompatActivity {
                     String formattedDate = df.format(c.getTime());
                     Log.i("date",formattedDate);
                     Message message=new Message(formattedDate,mContact.getFirstname(),mContact.getLastname(),mContact.getPhoneno(),body);
+                    messageViewModel.insert(message);
 
                 } else {
                     Log.d("TAG", "onResponse->failure");

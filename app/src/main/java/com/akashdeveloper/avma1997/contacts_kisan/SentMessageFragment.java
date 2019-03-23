@@ -1,5 +1,8 @@
 package com.akashdeveloper.avma1997.contacts_kisan;
 
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProvider;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,12 +17,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SentMessageFragment extends Fragment {
     RecyclerView recyclerView;
     MessageAdapter adapter;
     ArrayList<Message> messages;
     DividerItemDecoration decoration;
+    MessageViewModel messageViewModel;
 
     @Nullable
     @Override
@@ -27,14 +32,26 @@ public class SentMessageFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_message, container, false);
         recyclerView = v.findViewById(R.id.recyclerview_messages);
         messages = new ArrayList<>();
-        adapter = new MessageAdapter(getContext(), messages);
+        adapter = new MessageAdapter(getContext(),messages);
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         decoration = new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(decoration);
-
-
+        fetchDataFromDatabase();
         return v;
+    }
+
+    private void fetchDataFromDatabase() {
+        messageViewModel= ViewModelProviders.of(this).get(MessageViewModel.class);
+        messageViewModel.getAllMessages().observe(this, new Observer<List<Message>>() {
+            @Override
+            public void onChanged(@Nullable final List<Message> messageArrayList) {
+                // Update the cached copy of the words in the adapter.
+                messages.clear();
+                messages.addAll(messageArrayList);
+                adapter.notifyDataSetChanged();
+            }
+        });
     }
 }
