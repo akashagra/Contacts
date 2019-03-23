@@ -1,4 +1,4 @@
-package com.akashdeveloper.avma1997.contacts_kisan;
+package com.akashdeveloper.avma1997.contacts_kisan.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +14,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.akashdeveloper.avma1997.contacts_kisan.ContactAdapter;
+import com.akashdeveloper.avma1997.contacts_kisan.ContactInfoActivity;
+import com.akashdeveloper.avma1997.contacts_kisan.ContactList;
+import com.akashdeveloper.avma1997.contacts_kisan.GetContactDataService;
 import com.akashdeveloper.avma1997.contacts_kisan.POJO.Contact;
+import com.akashdeveloper.avma1997.contacts_kisan.R;
+import com.akashdeveloper.avma1997.contacts_kisan.RetrofitInstance;
 
 import java.util.ArrayList;
 

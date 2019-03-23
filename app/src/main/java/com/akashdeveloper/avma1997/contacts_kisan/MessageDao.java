@@ -9,6 +9,8 @@ import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 import android.provider.ContactsContract;
 
+import com.akashdeveloper.avma1997.contacts_kisan.POJO.Message;
+
 import java.util.List;
 
 @Dao

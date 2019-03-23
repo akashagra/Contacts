@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.akashdeveloper.avma1997.contacts_kisan"
-        minSdkVersion 19
+        minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -34,7 +34,8 @@ dependencies {
 
     implementation "android.arch.lifecycle:extensions:$lifecycle_version"
     annotationProcessor "android.arch.lifecycle:compiler:$lifecycle_version"
-
+    implementation "android.arch.lifecycle:common-java8:$lifecycle_version"
+    implementation "android.arch.lifecycle:runtime:$lifecycle_version"
     implementation "android.arch.persistence.room:runtime:$room_version"
     annotationProcessor "android.arch.persistence.room:compiler:$room_version"
 }

@@ -1,4 +1,4 @@
-package com.akashdeveloper.avma1997.contacts_kisan;
+package com.akashdeveloper.avma1997.contacts_kisan.POJO;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;

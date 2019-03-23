@@ -1,5 +1,6 @@
 package com.akashdeveloper.avma1997.contacts_kisan;
 
+import com.akashdeveloper.avma1997.contacts_kisan.POJO.Contact;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;

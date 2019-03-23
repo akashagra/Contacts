@@ -4,6 +4,8 @@ import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
 
+import com.akashdeveloper.avma1997.contacts_kisan.POJO.Message;
+
 import java.util.List;
 
 public class MessageRepository {

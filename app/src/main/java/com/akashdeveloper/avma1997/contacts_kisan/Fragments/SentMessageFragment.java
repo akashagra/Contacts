@@ -1,4 +1,4 @@
-package com.akashdeveloper.avma1997.contacts_kisan;
+package com.akashdeveloper.avma1997.contacts_kisan.Fragments;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProvider;
@@ -15,6 +15,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.akashdeveloper.avma1997.contacts_kisan.MessageAdapter;
+import com.akashdeveloper.avma1997.contacts_kisan.MessageViewModel;
+import com.akashdeveloper.avma1997.contacts_kisan.POJO.Message;
+import com.akashdeveloper.avma1997.contacts_kisan.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,18 +45,19 @@ public class SentMessageFragment extends Fragment {
         recyclerView.addItemDecoration(decoration);
         fetchDataFromDatabase();
         return v;
+
     }
 
-    private void fetchDataFromDatabase() {
-        messageViewModel= ViewModelProviders.of(this).get(MessageViewModel.class);
-        messageViewModel.getAllMessages().observe(this, new Observer<List<Message>>() {
-            @Override
-            public void onChanged(@Nullable final List<Message> messageArrayList) {
-                // Update the cached copy of the words in the adapter.
-                messages.clear();
-                messages.addAll(messageArrayList);
-                adapter.notifyDataSetChanged();
-            }
-        });
-    }
+    public void fetchDataFromDatabase() {
+    messageViewModel= ViewModelProviders.of(this).get(MessageViewModel.class);
+    messageViewModel.getAllMessages().observe(this, new Observer<List<Message>>() {
+        @Override
+        public void onChanged(@Nullable final List<Message> messageArrayList) {
+            // Update the cached copy of the words in the adapter.
+            messages.clear();
+            messages.addAll(messageArrayList);
+            adapter.notifyDataSetChanged();
+        }
+    });
+}
 }

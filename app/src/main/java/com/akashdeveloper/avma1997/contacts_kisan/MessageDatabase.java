@@ -7,6 +7,8 @@ import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 import android.os.AsyncTask;
 
+import com.akashdeveloper.avma1997.contacts_kisan.POJO.Message;
+
 @Database(entities = {Message.class}, version = 1)
 public abstract class MessageDatabase extends RoomDatabase {
 

@@ -4,6 +4,8 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 
+import com.akashdeveloper.avma1997.contacts_kisan.POJO.Message;
+
 import java.util.List;
 
 public class MessageViewModel extends AndroidViewModel {
@@ -18,7 +20,7 @@ public class MessageViewModel extends AndroidViewModel {
             mAllMessages = mRepository.getAllMessages();
         }
 
-        LiveData<List<Message>> getAllMessages() { return mAllMessages; }
+         public LiveData<List<Message>> getAllMessages() { return mAllMessages; }
 
         public void insert(Message message) { mRepository.insert(message); }
     }

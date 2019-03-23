@@ -7,7 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.akashdeveloper.avma1997.contacts_kisan.POJO.Contact;
 
 import java.util.ArrayList;
 

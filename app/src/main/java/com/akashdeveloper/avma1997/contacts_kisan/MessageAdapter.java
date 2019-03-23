@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.akashdeveloper.avma1997.contacts_kisan.POJO.Message;
+
 import java.util.ArrayList;
 
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageViewHolder>{
@@ -56,9 +58,9 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             MessageViewHolder(View itemView) {
                 super(itemView);
 
-                ContactFirstName = itemView.findViewById(R.id.txt_first_name);
-                ContactLastName = itemView.findViewById(R.id.txt_last_name);
-                ContactPhoneNo = itemView.findViewById(R.id.txt_phone_no);
+                ContactFirstName = itemView.findViewById(R.id.first_name_message_fragment);
+                ContactLastName = itemView.findViewById(R.id.last_name_message_fragment);
+                ContactPhoneNo = itemView.findViewById(R.id.phone_no_message_fragment);
                 date=itemView.findViewById(R.id.textview_date);
                 message=itemView.findViewById(R.id.textview_message);
 
