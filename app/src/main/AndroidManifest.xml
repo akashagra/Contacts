@@ -13,12 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SendingActivity"
+            android:name=".Activity.SendingActivity"
             android:label="@string/title_activity_sending"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".ContactInfoActivity" />
+        <activity android:name=".Activity.ContactInfoActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

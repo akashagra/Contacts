@@ -1,4 +1,4 @@
-package com.akashdeveloper.avma1997.contacts_kisan;
+package com.akashdeveloper.avma1997.contacts_kisan.Activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.akashdeveloper.avma1997.contacts_kisan.Fragments.ContactFragment;
+import com.akashdeveloper.avma1997.contacts_kisan.R;
 
 public class ContactInfoActivity extends AppCompatActivity {
     String firstName;
@@ -40,7 +41,7 @@ public class ContactInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ContactInfoActivity.this, SendingActivity.class);
-                intent.putExtra(ContactFragment.EXTRA_LASTNAME,firstName);
+                intent.putExtra(ContactFragment.EXTRA_FIRSTNAME,firstName);
                 intent.putExtra(ContactFragment.EXTRA_LASTNAME,lastName);
                 intent.putExtra(ContactFragment.EXTRA_PHONE_NO,phoneNo);
                 startActivity(intent);

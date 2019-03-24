@@ -1,9 +1,7 @@
 package com.akashdeveloper.avma1997.contacts_kisan.Fragments;
 
 import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,17 +9,17 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.akashdeveloper.avma1997.contacts_kisan.MessageAdapter;
+import com.akashdeveloper.avma1997.contacts_kisan.Adapters.MessageAdapter;
 import com.akashdeveloper.avma1997.contacts_kisan.MessageViewModel;
 import com.akashdeveloper.avma1997.contacts_kisan.POJO.Message;
 import com.akashdeveloper.avma1997.contacts_kisan.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class SentMessageFragment extends Fragment {
@@ -56,6 +54,7 @@ public class SentMessageFragment extends Fragment {
             // Update the cached copy of the words in the adapter.
             messages.clear();
             messages.addAll(messageArrayList);
+            Collections.reverse(messages);
             adapter.notifyDataSetChanged();
         }
     });

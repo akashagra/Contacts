@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context="com.akashdeveloper.avma1997.contacts_kisan.MainActivity">
+        tools:context="com.akashdeveloper.avma1997.contacts_kisan.Activity.MainActivity">
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/appbar"

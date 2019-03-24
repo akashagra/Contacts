@@ -1,4 +1,4 @@
-package com.akashdeveloper.avma1997.contacts_kisan;
+package com.akashdeveloper.avma1997.contacts_kisan.Activity;
 
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +15,7 @@ import android.view.MenuItem;
 
 import com.akashdeveloper.avma1997.contacts_kisan.Fragments.ContactFragment;
 import com.akashdeveloper.avma1997.contacts_kisan.Fragments.SentMessageFragment;
+import com.akashdeveloper.avma1997.contacts_kisan.R;
 
 public class MainActivity extends AppCompatActivity {
     private TabLayout tab;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // In this activity two fragments are created , contacts fragment and message fragment
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -70,9 +72,10 @@ public class MainActivity extends AppCompatActivity {
             public Fragment getItem(int position) {
                 // getItem is called to instantiate the fragment for the given page.
                 // Return a PlaceholderFragment (defined as a static inner class below).
+                // contact fragment on the first tab is used to display the list of contacts
+                // message fragment is used to display the list of messages
                 switch (position) {
                     case 0:
-                        Log.i("akash"," yaha bhi aaya");
                         ContactFragment contactFragment =new ContactFragment();
                         return contactFragment;
                     case 1:

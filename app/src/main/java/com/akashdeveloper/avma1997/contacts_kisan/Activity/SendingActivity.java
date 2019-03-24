@@ -1,4 +1,4 @@
-package com.akashdeveloper.avma1997.contacts_kisan;
+package com.akashdeveloper.avma1997.contacts_kisan.Activity;
 
 import android.Manifest;
 import android.arch.lifecycle.ViewModelProviders;
@@ -15,8 +15,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.akashdeveloper.avma1997.contacts_kisan.Fragments.ContactFragment;
+import com.akashdeveloper.avma1997.contacts_kisan.MessageViewModel;
 import com.akashdeveloper.avma1997.contacts_kisan.POJO.Contact;
 import com.akashdeveloper.avma1997.contacts_kisan.POJO.Message;
+import com.akashdeveloper.avma1997.contacts_kisan.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -65,7 +67,7 @@ public class SendingActivity extends AppCompatActivity {
         messageViewModel= ViewModelProviders.of(this).get(MessageViewModel.class);
 
         randomNo();
-        obtainPermission();
+        //obtainPermission();
 
         mSendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,10 +79,10 @@ public class SendingActivity extends AppCompatActivity {
 
     }
 
-    private void obtainPermission() {
-        ActivityCompat.requestPermissions(this,
-                new String[]{Manifest.permission.RECORD_AUDIO}, MIC_PERMISSION_REQUEST_CODE);
-    }
+//    private void obtainPermission() {
+//        ActivityCompat.requestPermissions(this,
+//                new String[]{Manifest.permission.RECORD_AUDIO}, MIC_PERMISSION_REQUEST_CODE);
+//    }
 
     private void randomNo() {
         Random rnd = new Random();
@@ -128,8 +130,13 @@ public class SendingActivity extends AppCompatActivity {
                     SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                     String formattedDate = df.format(c.getTime());
                     Log.i("date",formattedDate);
+                    Log.i("name",mContact.getFirstname());
                     Message message=new Message(formattedDate,mContact.getFirstname(),mContact.getLastname(),mContact.getPhoneno(),body);
                     messageViewModel.insert(message);
+                    Toast.makeText(SendingActivity.this, " Congrats , you would soon receive an otp", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(SendingActivity.this, MainActivity.class);
+                    startActivity(intent);
+
 
                 } else {
                     Log.d("TAG", "onResponse->failure");

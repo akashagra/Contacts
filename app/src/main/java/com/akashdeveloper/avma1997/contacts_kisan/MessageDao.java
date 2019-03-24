@@ -16,7 +16,7 @@ import java.util.List;
 @Dao
 public interface MessageDao {
     @Insert
-    void insert(Message message);
+    void insert(Message message); // In our code only insert is called. Bt as our codebase grows other methods can be also used
 
     @Update
     void update(Message message);

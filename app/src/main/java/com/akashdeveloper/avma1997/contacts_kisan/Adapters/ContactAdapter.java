@@ -1,4 +1,4 @@
-package com.akashdeveloper.avma1997.contacts_kisan;
+package com.akashdeveloper.avma1997.contacts_kisan.Adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.akashdeveloper.avma1997.contacts_kisan.POJO.Contact;
+import com.akashdeveloper.avma1997.contacts_kisan.R;
 
 import java.util.ArrayList;
 
@@ -28,16 +29,13 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
         this.dataList = dataList;
         mContext = context;
         mListener = listener;
-        Log.i("adapterconstructor","aagya yaha pr bhi");
-
     }
 
     @Override
     public ContactViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        //LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-       // View view = layoutInflater.inflate(R.layout.single_row_view, parent, false);
+
         View itemView = LayoutInflater.from(mContext).inflate(R.layout.single_row_view,parent,false);
-        Log.i("adapterconstructor","aagya yaha pr bhi");
+
         return new ContactViewHolder(itemView, mListener);
     }
 

@@ -1,4 +1,4 @@
-package com.akashdeveloper.avma1997.contacts_kisan;
+package com.akashdeveloper.avma1997.contacts_kisan.POJO;
 
 import com.akashdeveloper.avma1997.contacts_kisan.POJO.Contact;
 import com.google.gson.annotations.SerializedName;

@@ -1,4 +1,4 @@
-package com.akashdeveloper.avma1997.contacts_kisan;
+package com.akashdeveloper.avma1997.contacts_kisan.Adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.akashdeveloper.avma1997.contacts_kisan.POJO.Message;
+import com.akashdeveloper.avma1997.contacts_kisan.R;
 
 import java.util.ArrayList;
 
@@ -35,7 +36,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
         @Override
         public void onBindViewHolder(MessageViewHolder holder, int position) {
-
             holder.ContactFirstName.setText(dataList.get(position).getFirstname());
             holder.ContactLastName.setText(dataList.get(position).getLastname());
             holder.ContactPhoneNo.setText(dataList.get(position).getPhoneNo());
@@ -45,7 +45,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
         @Override
         public int getItemCount() {
-         //   Log.i("item_size",dataList.size()+"");
 
             return dataList.size();
         }
@@ -57,13 +56,11 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
             MessageViewHolder(View itemView) {
                 super(itemView);
-
                 ContactFirstName = itemView.findViewById(R.id.first_name_message_fragment);
                 ContactLastName = itemView.findViewById(R.id.last_name_message_fragment);
                 ContactPhoneNo = itemView.findViewById(R.id.phone_no_message_fragment);
                 date=itemView.findViewById(R.id.textview_date);
                 message=itemView.findViewById(R.id.textview_message);
-
             }
 
 

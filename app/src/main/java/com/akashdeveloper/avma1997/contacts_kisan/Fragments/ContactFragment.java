@@ -14,13 +14,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.akashdeveloper.avma1997.contacts_kisan.ContactAdapter;
-import com.akashdeveloper.avma1997.contacts_kisan.ContactInfoActivity;
-import com.akashdeveloper.avma1997.contacts_kisan.ContactList;
-import com.akashdeveloper.avma1997.contacts_kisan.GetContactDataService;
+import com.akashdeveloper.avma1997.contacts_kisan.Adapters.ContactAdapter;
+import com.akashdeveloper.avma1997.contacts_kisan.Activity.ContactInfoActivity;
+import com.akashdeveloper.avma1997.contacts_kisan.POJO.ContactList;
+import com.akashdeveloper.avma1997.contacts_kisan.Retrofit.GetContactDataService;
 import com.akashdeveloper.avma1997.contacts_kisan.POJO.Contact;
 import com.akashdeveloper.avma1997.contacts_kisan.R;
-import com.akashdeveloper.avma1997.contacts_kisan.RetrofitInstance;
+import com.akashdeveloper.avma1997.contacts_kisan.Retrofit.RetrofitInstance;
 
 import java.util.ArrayList;
 
@@ -46,7 +46,7 @@ public class ContactFragment extends Fragment {
         contacts=new ArrayList<>();
         adapter = new ContactAdapter(getContext(), contacts, new ContactAdapter.ContactClickListener() {
             public void onItemClick(View view, int position) {
-                //Toast.makeText(getActivity(),position+"",Toast.LENGTH_SHORT).show();
+                // on clicking a particular item , the onclick method of this class takes you to the next activity contact info activity
                 Log.i("pos",position+"");
                 Contact contact= contacts.get(position);
                 Intent intent= new Intent(getActivity(), ContactInfoActivity.class);
@@ -79,6 +79,7 @@ public class ContactFragment extends Fragment {
         call.enqueue(new Callback<ContactList>() {
             @Override
             public void onResponse(Call<ContactList> call, Response<ContactList> response) {
+                // on getting the retrofit response , ondownload complete is called to update the arraylist
                 onDownloadComplete(response.body().getContactArrayList());
 
             }
@@ -99,7 +100,7 @@ public class ContactFragment extends Fragment {
 
         this.contacts.clear();
         this.contacts.addAll(contactArrayList);
-        adapter.notifyDataSetChanged();
+        adapter.notifyDataSetChanged(); // this method is very useful to notify the adapter.
 
     }
 
