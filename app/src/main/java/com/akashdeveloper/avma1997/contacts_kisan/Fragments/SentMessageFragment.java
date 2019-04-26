@@ -14,7 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.akashdeveloper.avma1997.contacts_kisan.Adapters.MessageAdapter;
-import com.akashdeveloper.avma1997.contacts_kisan.MessageViewModel;
+import com.akashdeveloper.avma1997.contacts_kisan.MVVM.MessageViewModel;
 import com.akashdeveloper.avma1997.contacts_kisan.POJO.Message;
 import com.akashdeveloper.avma1997.contacts_kisan.R;
 

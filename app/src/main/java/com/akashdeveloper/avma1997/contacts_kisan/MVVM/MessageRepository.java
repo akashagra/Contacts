@@ -1,4 +1,4 @@
-package com.akashdeveloper.avma1997.contacts_kisan;
+package com.akashdeveloper.avma1997.contacts_kisan.MVVM;
 
 import android.app.Application;
 import android.arch.lifecycle.LiveData;

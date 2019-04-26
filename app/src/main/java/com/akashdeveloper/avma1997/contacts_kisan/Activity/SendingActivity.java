@@ -1,9 +1,7 @@
 package com.akashdeveloper.avma1997.contacts_kisan.Activity;
 
-import android.Manifest;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
@@ -15,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.akashdeveloper.avma1997.contacts_kisan.Fragments.ContactFragment;
-import com.akashdeveloper.avma1997.contacts_kisan.MessageViewModel;
+import com.akashdeveloper.avma1997.contacts_kisan.MVVM.MessageViewModel;
 import com.akashdeveloper.avma1997.contacts_kisan.POJO.Contact;
 import com.akashdeveloper.avma1997.contacts_kisan.POJO.Message;
 import com.akashdeveloper.avma1997.contacts_kisan.R;
