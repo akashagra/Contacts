@@ -77,9 +77,10 @@ public class ContactFragment extends Fragment {
         Log.wtf("URL Called", call.request().url() + "");
 
         call.enqueue(new Callback<ContactList>() {
+            // gson converts the json string to java objects and it can do vice versa also.
             @Override
             public void onResponse(Call<ContactList> call, Response<ContactList> response) {
-                // on getting the retrofit response , ondownload complete is called to update the arraylist
+                // response.body corresponds to object of Contact List
                 onDownloadComplete(response.body().getContactArrayList());
 
             }

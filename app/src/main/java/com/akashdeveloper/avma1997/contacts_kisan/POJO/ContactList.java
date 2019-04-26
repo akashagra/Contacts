@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 
 public class ContactList {
-
+        // serialized name corresponds to the name in the api
         @SerializedName("Contact")
         private ArrayList<Contact> contactList;
 
