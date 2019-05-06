@@ -15,6 +15,13 @@ import java.util.ArrayList;
 
 public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactViewHolder> {
 
+    /* NewFragment newfragment= New Fragment();
+    Bundle bundle= new Bundle();
+    bundle.putString(key,"your_value")
+    newfragment.setArguments(bundle)
+     */
+
+
 
     private ArrayList<Contact> dataList;
     private ContactClickListener mListener;
